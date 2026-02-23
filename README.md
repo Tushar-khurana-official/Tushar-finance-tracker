@@ -43,6 +43,7 @@
 
 Here is the folder structure of this app.
 
+<!--- FOLDER_STRUCTURE_START --->
 ```bash
 finance-dashboard/
   |- app/
@@ -99,6 +100,7 @@ finance-dashboard/
   |- tailwind.config.ts
   |- tsconfig.json
 ```
+<!--- FOLDER_STRUCTURE_END --->
 
 <br />
 
@@ -208,6 +210,7 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Finance.
 
 - Thanks to CodeWithAntonio: https://codewithantonio.com/
+<!--- DEPENDENCIES_START --->
 - [@clerk/backend](https://www.npmjs.com/package/@clerk/backend): ^1.1.3
 - [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^5.0.8
 - [@hono/clerk-auth](https://www.npmjs.com/package/@hono/clerk-auth): ^2.0.0
@@ -266,6 +269,7 @@ Useful resources and dependencies that are used in Finance.
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.5.14
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.1
 - [typescript](https://www.npmjs.com/package/typescript): ^5
+<!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
 
