@@ -58,12 +58,40 @@ finance-dashboard/
     |-- layout.tsx
   |- components/
     |-- ui/
+    |-- account-filter.tsx
+    |-- amount-input.tsx
+    |-- area-variant.tsx
+    |-- bar-variant.tsx
+    |-- category-tooltip.tsx
+    |-- chart.tsx
+    |-- count-up.tsx
+    |-- custom-tooltip.tsx
+    |-- data-card.tsx
+    |-- data-charts.tsx
+    |-- data-grid.tsx
+    |-- data-table.tsx
+    |-- date-filter.tsx
+    |-- date-picker.tsx
+    |-- filters.tsx
+    |-- header-logo.tsx
+    |-- header.tsx
+    |-- line-variant.tsx
+    |-- nav-button.tsx
+    |-- navigation.tsx
+    |-- pie-variant.tsx
+    |-- radar-variant.tsx
+    |-- radial-variant.tsx
+    |-- select.tsx
+    |-- spending-pie.tsx
+    |-- welcome-msg.tsx
   |- config/
     |-- index.ts
   |- db/
     |-- drizzle.ts
     |-- schema.ts
   |- drizzle/
+    |-- meta/
+    |-- 0000_lying_shockwave.sql
   |- features/
     |-- accounts/
     |-- categories/
@@ -78,15 +106,13 @@ finance-dashboard/
     |-- query-provider.tsx
     |-- sheet-provider.tsx
   |- public/
-    |-- data.csv
-    |-- github.svg
-    |-- logo.svg
   |- scripts/
     |-- seed.ts
   |- .env.example
-  |- .env.local
+  |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
+  |- .gitpod.yml
   |- .prettierrc
   |- bun.lockb
   |- components.json
@@ -94,11 +120,11 @@ finance-dashboard/
   |- environment.d.ts
   |- middleware.ts
   |- next.config.mjs
-  |- package-lock.json
   |- package.json
-  |- postcss.config.js
+  |- postcss.config.mjs
   |- tailwind.config.ts
   |- tsconfig.json
+  |- vercel.ts
 ```
 <!--- FOLDER_STRUCTURE_END --->
 
@@ -215,60 +241,62 @@ Useful resources and dependencies that are used in Finance.
 - [@clerk/nextjs](https://www.npmjs.com/package/@clerk/nextjs): ^5.0.8
 - [@hono/clerk-auth](https://www.npmjs.com/package/@hono/clerk-auth): ^2.0.0
 - [@hono/zod-validator](https://www.npmjs.com/package/@hono/zod-validator): ^0.2.1
-- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.3.4
-- [@neondatabase/serverless](https://www.npmjs.com/package/@neondatabase/serverless): ^0.9.3
-- [@paralleldrive/cuid2](https://www.npmjs.com/package/@paralleldrive/cuid2): ^2.2.2
-- [@radix-ui/react-checkbox](https://www.npmjs.com/package/@radix-ui/react-checkbox): ^1.0.4
-- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.0.5
-- [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.0.6
-- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.0.2
-- [@radix-ui/react-popover](https://www.npmjs.com/package/@radix-ui/react-popover): ^1.0.7
-- [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.0.0
-- [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.0.3
-- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.0.2
-- [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.0.7
-- [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^5.35.5
-- [@tanstack/react-table](https://www.npmjs.com/package/@tanstack/react-table): ^8.16.0
-- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.0
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): ^3.10.0
+- [@neondatabase/serverless](https://www.npmjs.com/package/@neondatabase/serverless): ^0.9.5
+- [@paralleldrive/cuid2](https://www.npmjs.com/package/@paralleldrive/cuid2): ^2.3.1
+- [@radix-ui/react-checkbox](https://www.npmjs.com/package/@radix-ui/react-checkbox): ^1.3.3
+- [@radix-ui/react-dialog](https://www.npmjs.com/package/@radix-ui/react-dialog): ^1.1.15
+- [@radix-ui/react-dropdown-menu](https://www.npmjs.com/package/@radix-ui/react-dropdown-menu): ^2.1.16
+- [@radix-ui/react-label](https://www.npmjs.com/package/@radix-ui/react-label): ^2.1.8
+- [@radix-ui/react-popover](https://www.npmjs.com/package/@radix-ui/react-popover): ^1.1.15
+- [@radix-ui/react-select](https://www.npmjs.com/package/@radix-ui/react-select): ^2.2.6
+- [@radix-ui/react-separator](https://www.npmjs.com/package/@radix-ui/react-separator): ^1.1.8
+- [@radix-ui/react-slot](https://www.npmjs.com/package/@radix-ui/react-slot): ^1.2.4
+- [@radix-ui/react-tooltip](https://www.npmjs.com/package/@radix-ui/react-tooltip): ^1.2.8
+- [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query): ^5.90.21
+- [@tanstack/react-table](https://www.npmjs.com/package/@tanstack/react-table): ^8.21.3
+- [@types/node](https://www.npmjs.com/package/@types/node): ^20.19.33
+- [@types/react](https://www.npmjs.com/package/@types/react): ^18.3.28
+- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18.3.7
+- [@vercel/config](https://www.npmjs.com/package/@vercel/config): ^0.0.33
+- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
-- [date-fns](https://www.npmjs.com/package/date-fns): ^3.6.0
+- [date-fns](https://www.npmjs.com/package/date-fns): ^4.1.0
+- [dotenv](https://www.npmjs.com/package/dotenv): ^16.6.1
+- [drizzle-kit](https://www.npmjs.com/package/drizzle-kit): ^0.21.2
 - [drizzle-orm](https://www.npmjs.com/package/drizzle-orm): ^0.30.10
 - [drizzle-zod](https://www.npmjs.com/package/drizzle-zod): ^0.5.1
-- [hono](https://www.npmjs.com/package/hono): ^4.3.4
-- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.378.0
-- [next](https://www.npmjs.com/package/next): 14.2.3
-- [next-themes](https://www.npmjs.com/package/next-themes): ^0.3.0
-- [query-string](https://www.npmjs.com/package/query-string): ^9.0.0
-- [react](https://www.npmjs.com/package/react): ^18
-- [react-countup](https://www.npmjs.com/package/react-countup): ^6.5.3
-- [react-currency-input-field](https://www.npmjs.com/package/react-currency-input-field): ^3.8.0
-- [react-day-picker](https://www.npmjs.com/package/react-day-picker): ^8.10.1
-- [react-dom](https://www.npmjs.com/package/react-dom): ^18
-- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.51.4
-- [react-icons](https://www.npmjs.com/package/react-icons): ^5.2.1
-- [react-papaparse](https://www.npmjs.com/package/react-papaparse): ^4.4.0
-- [react-select](https://www.npmjs.com/package/react-select): ^5.8.0
-- [react-use](https://www.npmjs.com/package/react-use): ^17.5.0
-- [recharts](https://www.npmjs.com/package/recharts): ^2.12.7
-- [sonner](https://www.npmjs.com/package/sonner): ^1.4.41
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.3.0
-- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
-- [zod](https://www.npmjs.com/package/zod): ^3.23.8
-- [zustand](https://www.npmjs.com/package/zustand): ^4.5.2
-- [@types/node](https://www.npmjs.com/package/@types/node): ^20
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18
-- [dotenv](https://www.npmjs.com/package/dotenv): ^16.4.5
-- [drizzle-kit](https://www.npmjs.com/package/drizzle-kit): ^0.21.2
 - [eslint](https://www.npmjs.com/package/eslint): ^8
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 14.2.3
 - [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports): ^3.2.0
-- [pg](https://www.npmjs.com/package/pg): ^8.11.5
+- [hono](https://www.npmjs.com/package/hono): ^4.11.9
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^0.564.0
+- [next](https://www.npmjs.com/package/next): 15.5.10
+- [next-themes](https://www.npmjs.com/package/next-themes): ^0.4.6
+- [pg](https://www.npmjs.com/package/pg): ^8.18.0
 - [postcss](https://www.npmjs.com/package/postcss): ^8
-- [prettier](https://www.npmjs.com/package/prettier): ^3.2.5
+- [prettier](https://www.npmjs.com/package/prettier): ^3.8.1
 - [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwindcss): ^0.5.14
+- [query-string](https://www.npmjs.com/package/query-string): ^9.3.1
+- [react](https://www.npmjs.com/package/react): ^19.2.4
+- [react-countup](https://www.npmjs.com/package/react-countup): ^6.5.3
+- [react-currency-input-field](https://www.npmjs.com/package/react-currency-input-field): ^3.10.0
+- [react-day-picker](https://www.npmjs.com/package/react-day-picker): ^8.10.1
+- [react-dom](https://www.npmjs.com/package/react-dom): ^19.2.4
+- [react-hook-form](https://www.npmjs.com/package/react-hook-form): ^7.71.1
+- [react-icons](https://www.npmjs.com/package/react-icons): ^5.5.0
+- [react-papaparse](https://www.npmjs.com/package/react-papaparse): ^4.4.0
+- [react-select](https://www.npmjs.com/package/react-select): ^5.10.2
+- [react-use](https://www.npmjs.com/package/react-use): ^17.6.0
+- [recharts](https://www.npmjs.com/package/recharts): ^2.15.4
+- [sonner](https://www.npmjs.com/package/sonner): ^1.7.4
+- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.6.1
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.4.1
-- [typescript](https://www.npmjs.com/package/typescript): ^5
+- [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate): ^1.0.7
+- [typescript](https://www.npmjs.com/package/typescript): ^5.9.3
+- [zod](https://www.npmjs.com/package/zod): ^3.25.76
+- [zustand](https://www.npmjs.com/package/zustand): ^4.5.7
+
 <!--- DEPENDENCIES_END --->
 
 ## :coffee: Buy Me a Coffee
