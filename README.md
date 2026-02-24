@@ -112,7 +112,6 @@ finance-dashboard/
   |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
-  |- .gitpod.yml
   |- .prettierrc
   |- bun.lockb
   |- components.json
