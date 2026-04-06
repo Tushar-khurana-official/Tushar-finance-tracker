@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "Finance",
-  description: "Track your income and expenses with Finance.",
+  title: "Tushar Finance Dashboard",
+  description: "Track your income and expenses with Tushar Finance Dashboard.",
   keywords: [
     "reactjs",
     "nextjs",
@@ -45,11 +45,11 @@ export const siteConfig: Metadata = {
     "css",
   ] as Array<string>,
   authors: {
-    name: "Sanidhya Kumar Verma",
-    url: "https://github.com/sanidhyy",
+    name: "Tushar Khurana",
+    url: "https://github.com/Tushar-khurana-official",
   },
 } as const;
 
 export const links = {
-  sourceCode: "https://github.com/sanidhyy/finance-dashboard",
+  sourceCode: "https://github.com/Tushar-khurana-official/finance-dashboard",
 } as const;
