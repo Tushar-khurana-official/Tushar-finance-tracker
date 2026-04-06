@@ -45,7 +45,7 @@ Here is the folder structure of this app.
 
 <!--- FOLDER_STRUCTURE_START --->
 ```bash
-finance-dashboard/
+Tushar-finance-tracker/
   |- app/
     |-- (auth)/
     |-- (dashboard)/
@@ -108,8 +108,6 @@ finance-dashboard/
   |- public/
   |- scripts/
     |-- seed.ts
-  |- .env.example
-  |- .env/.env.local
   |- .eslintrc.json
   |- .gitignore
   |- .prettierrc
@@ -119,6 +117,7 @@ finance-dashboard/
   |- environment.d.ts
   |- middleware.ts
   |- next.config.mjs
+  |- package-lock.json
   |- package.json
   |- postcss.config.mjs
   |- tailwind.config.ts
